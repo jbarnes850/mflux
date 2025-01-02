@@ -8,11 +8,7 @@
 .env.production.local
 
 .venv
-*.png
-*.jpg
 *.pyc
-*.safetensors
-*.json
 
 *.egg-info
 

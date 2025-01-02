@@ -1,0 +1,17 @@
+{
+    "mflux_version": "0.5.1",
+    "model": "dev",
+    "seed": 42,
+    "steps": 30,
+    "guidance": 7.5,
+    "precision": "mlx.core.bfloat16",
+    "quantize": null,
+    "generation_time_seconds": 439.92,
+    "lora_paths": null,
+    "lora_scales": null,
+    "init_image_path": null,
+    "init_image_strength": null,
+    "controlnet_image_path": null,
+    "controlnet_strength": null,
+    "prompt": "Luxury food photography of a gourmet dish, perfect lighting, shallow depth of field, professional food styling, shot on Phase One, 100mm macro lens, backlit with soft window light, garnished with micro herbs, 8k resolution, photorealistic"
+}
