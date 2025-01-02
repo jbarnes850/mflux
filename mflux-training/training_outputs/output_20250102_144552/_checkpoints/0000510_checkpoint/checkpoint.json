@@ -1,0 +1,15 @@
+{
+    "metadata": {
+        "start": "2025-01-02 14:46:05",
+        "end": "2025-01-02 17:47:52",
+        "duration": "3 hours and 1 minute and 46 seconds",
+        "number_of_training_examples": 17
+    },
+    "files": {
+        "config": "0000510_config.json",
+        "optimizer": "0000510_optimizer.safetensors",
+        "lora_adapter": "0000510_adapter.safetensors",
+        "iterator": "0000510_iterator.json",
+        "loss": "0000510_loss.json"
+    }
+}

@@ -1,0 +1,129 @@
+{
+    "model": "dev",
+    "seed": 42,
+    "steps": 20,
+    "guidance": 3.0,
+    "quantize": 4,
+    "width": 832,
+    "height": 832,
+    "output_dir": "mflux-training/output",
+    "image_dir": "mflux-training/images",
+    "gradient_accumulation_steps": 4,
+    "training_loop": {
+        "num_epochs": 30,
+        "batch_size": 1
+    },
+    "optimizer": {
+        "name": "AdamW",
+        "learning_rate": 0.0001
+    },
+    "save": {
+        "output_path": "mflux-training/output",
+        "checkpoint_frequency": 30
+    },
+    "instrumentation": {
+        "plot_frequency": 10,
+        "generate_image_frequency": 30,
+        "validation_prompt": "Professional product photography of a luxury item, dramatic lighting, 8k, photorealistic"
+    },
+    "examples": {
+        "path": "/Users/jarrodbarnes/mflux/mflux-training/images",
+        "images": [
+            {
+                "image": "luxury_product_01.png",
+                "prompt": "Luxury perfume bottle on black marble, dramatic lighting, professional product photography, soft shadows, crystal clear glass, golden liquid inside, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_02.png",
+                "prompt": "Premium watch on leather surface, macro photography, dramatic side lighting, professional product photography, showing intricate details, luxury timepiece, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_03.png",
+                "prompt": "High-end leather bag on white surface, soft diffused lighting, professional studio setup, showing texture details, luxury fashion, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_04.png",
+                "prompt": "Designer sunglasses on reflective surface, dramatic lighting, professional product photography, showing material quality, luxury eyewear, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_05.png",
+                "prompt": "Premium fountain pen on dark wood, dramatic spot lighting, professional product photography, showing metallic details, luxury writing instrument, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_06.png",
+                "prompt": "Luxury jewelry box with gold accents, soft directional lighting, professional product photography, rich textures, premium packaging, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_07.png",
+                "prompt": "High-end wireless headphones on glass surface, dramatic rim lighting, professional product photography, showing premium materials, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_08.png",
+                "prompt": "Premium smartphone on metallic surface, dramatic lighting, professional product photography, showing premium build quality, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_09.png",
+                "prompt": "Luxury wine bottle and glass, moody lighting, professional product photography, showing label details and wine color, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_10.png",
+                "prompt": "Premium skincare product on marble, soft diffused lighting, professional product photography, showing packaging luxury, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_11.png",
+                "prompt": "Designer wallet on leather surface, dramatic side lighting, professional product photography, showing leather grain, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_12.png",
+                "prompt": "Luxury candle with custom packaging, atmospheric lighting, professional product photography, showing brand details, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_13.png",
+                "prompt": "Premium coffee beans scattered on dark marble, overhead shot, professional product photography, dramatic rim lighting, showing texture and freshness, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_14.png",
+                "prompt": "Luxury watch movement macro shot, extreme detail, professional product photography, dramatic side lighting, showing intricate mechanical details, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_15.png",
+                "prompt": "High-end makeup palette with metallic finishes, soft gradient lighting, professional beauty photography, showing color and texture detail, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_16.png",
+                "prompt": "Premium chocolate truffles on black slate, selective focus, professional food photography, moody lighting with highlights on texture, 8k, photorealistic"
+            },
+            {
+                "image": "luxury_product_17.png",
+                "prompt": "Designer jewelry on mirror surface, split lighting setup, professional product photography, capturing gemstone brilliance, 8k, photorealistic"
+            }
+        ]
+    },
+    "lora_layers": {
+        "transformer_blocks": {
+            "layer_types": [
+                "attn.to_q",
+                "attn.to_k",
+                "attn.to_v",
+                "attn.to_out",
+                "ff.linear1",
+                "ff.linear2"
+            ],
+            "lora_rank": 8,
+            "block_range": {
+                "start": 0,
+                "end": 19
+            }
+        },
+        "single_transformer_blocks": {
+            "layer_types": [
+                "proj_out"
+            ],
+            "lora_rank": 32,
+            "block_range": {
+                "start": 0,
+                "end": 38
+            }
+        }
+    }
+}
