@@ -1,4 +1,5 @@
 from pathlib import Path
+import time
 
 import mlx.core as mx
 from mlx import nn
@@ -85,6 +86,9 @@ class Flux1(nn.Module):
             output_dir=stepwise_output_dir,
         )
 
+        # Start timing the generation process
+        start_time = time.time()
+
         # 1. Create the initial latents
         latents = LatentCreator.create_for_txt2img_or_img2img(seed, config, self.vae)
 
@@ -118,6 +122,10 @@ class Flux1(nn.Module):
             except KeyboardInterrupt:  # noqa: PERF203
                 stepwise_handler.handle_interruption()
                 raise StopImageGenerationException(f"Stopping image generation at step {t + 1}/{len(time_steps)}")
+
+        # Calculate generation time
+        generation_time = time.time() - start_time
+        print(f"\nGeneration time (excluding model loading): {generation_time:.2f} seconds")
 
         # 5. Decode the latent array and return the image
         latents = ArrayUtil.unpack_latents(latents=latents, height=config.height, width=config.width)
